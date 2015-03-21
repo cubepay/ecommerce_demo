@@ -1,6 +1,5 @@
 package com.company.web;
 
-import com.company.config.AppConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -30,6 +29,18 @@ public class CheckoutDemoController {
         String paymentLoggingUrl = util.getPaymentLoggingUrl();
 
         return "redirect:" + paymentLoggingUrl + "?url=" + util.getURLWithContextPath(request) + "/confirmation";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "cybersource")
+    public String getCybersource(HttpServletRequest request) {
+
+        return "payment_form";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "postcybersource")
+    public String postToCyberSource(HttpServletRequest request) {
+
+        return "payment_confirmation";
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "confirmation")
