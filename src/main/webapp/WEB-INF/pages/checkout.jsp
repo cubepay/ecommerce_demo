@@ -13,11 +13,11 @@
           <li class='item'>
             <div class='item__information'>
               <div class='item__image'>
-                <img src='http://upload.wikimedia.org/wikipedia/en/a/a7/Random_Access_Memories.jpg'>
+                <img src='http://www.arizonafoothillsmagazine.com/valleygirlblog/wp-content/uploads/michael-jackson-dangerous.jpg'>
               </div>
               <div class='item__body'>
-                <h2 class='item__title'>Random Access Memories</h2>
-                <p class='item__description'>Random Access Memories is the fourth studio album by French electronic music duo Daft Punk.</p>
+                <h2 class='item__title'>Dangerous</h2>
+                <p class='item__description'>Dangerous is the eighth studio album by American recording artist Michael Jackson. It was released on November 26, 1991 by Epic Records.</p>
               </div>
               <div class='item__price js-item-price' data-price='11.88'>$11.88</div>
             </div>
