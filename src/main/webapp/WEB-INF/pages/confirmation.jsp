@@ -18,7 +18,7 @@
 
 <body>
     <c:choose>
-          <c:when test="${success}">
+          <c:when test="${success && !cancel}">
             <ul class='item-list'>
                 <li class='item'>
                     <div class='item__information'>
@@ -32,36 +32,44 @@
                       <div class='item__information'>
                         <div class='item__body2'>
                           <h2 class='item__title'>Items Ordered</h2>
-                          <p class='item__description'>Dangerous by Michael Jackson</p>
+                          <p class='item__description'>Total Amount</p>
                         </div>
-                        <div class='item__price js-item-price' data-price='11.88'>$11.88</div>
+                        <div class='item__price js-item-price' data-price='11.88'>$${amount}</div>
                       </div>
                     </li>
                     <li class='item'>
                         <div class='item__information'>
                           <div class='item__body2'>
                             <h2 class='item__title'>Payment Information</h2>
-                            <p class='item__description'>Transaction Id : ${transactionId}</p><br>
-                            <p class='item__description'>Payment Method : ${paymentMethod}</p><br>
-                            <p class='item__description'>Card Type : ${cardType}</p>
-                            <p class='item__description'>First Name : ${firstName}</p>
-                            <p class='item__description'>Last Name : ${surname}</p>
-                            <p class='item__description'>Address : ${address}</p>
-                            <p class='item__description'>City : ${city}</p>
-                            <p class='item__description'>Country : ${country}</p>
+                            <p class='item__description'>Payment Method : ${paymentMethod}</p>
+                            <p class='item__description'>Transaction Id : ${transactionId}</p>
+                            <p class='item__description'>Reference No : ${refNo}</p>
+
                           </div>
                         </div>
                       </li>
             </ul>
           </c:when>
 
+          <c:when test="${!success && cancel}">
+              <ul class='item-list'>
+                           <li class='item'>
+                               <div class='item__information'>
+                                 <div class='item__body2'>
+                                   <h2 class='item__title'><font color="red">You have cancelled your transaction.</font></h2>
+                                 </div>
+                               </div>
+                             </li>
+                           </ul>
+            </c:when>
+
           <c:otherwise>
             <ul class='item-list'>
              <li class='item'>
                  <div class='item__information'>
                    <div class='item__body2'>
-                     <h2 class='item__title'><font color="red">Oopss..something wrong just happened</font></h2>
-                     <p class='item__description'>Please try again.</p>
+                     <h2 class='item__title'><font color="red">Your transaction cannot be processed.</font></h2>
+                     <p class='item__description'>Please contact administrator.</p>
                    </div>
                  </div>
                </li>
