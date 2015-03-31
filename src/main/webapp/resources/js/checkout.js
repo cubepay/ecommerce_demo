@@ -5,7 +5,7 @@ var subtotal = document.querySelector('.js-subtotal'),
     shipping = document.querySelector('.js-shipping'),
     total = document.querySelector('.js-total'),
     checkoutButton = document.querySelector('.js-checkout-button'),
-    //modalWrapper = document.querySelector('.js-modal-wrapper'),
+//    modalWrapper = document.querySelector('.js-modal-wrapper'),
     initialList = itemList.innerHTML
 
 function loop (which, callback) {
@@ -116,14 +116,14 @@ itemList.addEventListener('click', function (e) {
   }
 })
 
-checkoutButton.addEventListener('click', function () {
-  modalWrapper.classList.add('is-visible')
-})
-
-modalWrapper.addEventListener('click', function () {
-  modalWrapper.classList.remove('is-visible')
-})
-
-setTimeout(function () {
-  modalWrapper.style.display = 'block'
-}, 250)
+//checkoutButton.addEventListener('click', function () {
+//  modalWrapper.classList.add('is-visible')
+//})
+//
+//modalWrapper.addEventListener('click', function () {
+//  modalWrapper.classList.remove('is-visible')
+//})
+//
+//setTimeout(function () {
+//  modalWrapper.style.display = 'block'
+//}, 250)

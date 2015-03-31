@@ -15,7 +15,7 @@
 
     <context:component-scan base-package="com.company" />
 
-    <util:properties id="appProperties" location="classpath:com/company/config/app.properties"/>
+    <util:properties id="appProperties" location="file:${catalina.home}/conf/checkoutdemo/app.properties"/>
 
     <mvc:annotation-driven />
 
