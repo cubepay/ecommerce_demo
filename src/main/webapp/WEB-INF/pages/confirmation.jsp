@@ -41,11 +41,12 @@
                         <div class='item__information'>
                           <div class='item__body2'>
                             <h2 class='item__title'>Payment Information</h2>
-                            <p class='item__description'>Payment Method : ${paymentMethod}</p>
                             <p class='item__description'>Transaction Id : ${transactionId}</p>
                             <p class='item__description'>Reference No : ${refNo}</p>
-
-                          </div>
+                            <p class='item__description'>Auth Reference No : ${authRefNo}</p>
+                            <p class='item__description'>Payment Method : ${paymentMethod}</p>
+                            <p class='item__description'>Card No : ${cardNo}</p>
+                         </div>
                         </div>
                       </li>
             </ul>

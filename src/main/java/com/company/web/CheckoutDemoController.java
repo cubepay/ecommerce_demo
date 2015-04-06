@@ -50,6 +50,7 @@ public class CheckoutDemoController {
 
         String paymentLoggingUrl = util.getPaymentLoggingUrl();
 
+        total=total.substring(1,total.length());
         return "redirect:" + paymentLoggingUrl
                 + "?url=" + util.getURLWithContextPath(request) + "/confirmation"
                 + "&transaction_type=authorization"
@@ -80,6 +81,7 @@ public class CheckoutDemoController {
                                    @RequestParam(value = "auth_ref_no", required = false) String authRefNo,
                                    @RequestParam(value = "reference_no", required = false) String refNo,
                                    @RequestParam(value = "auth_amount", required = false) String amount,
+                                   @RequestParam(value = "card_no", required = false) String cardNo,
                                    ModelMap model) {
 
         model.addAttribute("success", success);
@@ -87,6 +89,9 @@ public class CheckoutDemoController {
         model.addAttribute("transactionId", transactionId);
         model.addAttribute("paymentMethod", paymentMethod);
         model.addAttribute("refNo", refNo);
+        model.addAttribute("authRefNo", authRefNo);
+        model.addAttribute("amount", amount);
+        model.addAttribute("cardNo", cardNo);
         model.addAttribute("amount", amount);
 
         return "confirmation";
