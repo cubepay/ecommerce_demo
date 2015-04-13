@@ -13,6 +13,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 public class AppConfig {
     private @Value("#{appProperties.paymentLoggingUrl}") String paymentLoggingUrl;
 
+    private @Value("#{appProperties.transactionType}") String transactionType;
     @Bean
     public InternalResourceViewResolver viewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
@@ -26,6 +27,7 @@ public class AppConfig {
     public Util util() {
         Util util = new Util();
         util.setPaymentLoggingUrl(paymentLoggingUrl);
+        util.setTransactionType(transactionType);
         return util;
     }
 

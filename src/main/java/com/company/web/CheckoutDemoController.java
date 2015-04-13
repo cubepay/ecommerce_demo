@@ -25,7 +25,7 @@ public class CheckoutDemoController {
     public String showCheckout(HttpServletRequest request) {
         Long referenceNo = (Long) request.getSession().getAttribute(REFERENCE_NO);
         if(referenceNo == null) {
-            request.getSession().setAttribute(REFERENCE_NO, new Long(10000001));
+            request.getSession().setAttribute(REFERENCE_NO, new Long(10001111));
         }
 
         return "checkout";
@@ -53,7 +53,7 @@ public class CheckoutDemoController {
         total=total.substring(1,total.length());
         return "redirect:" + paymentLoggingUrl
                 + "?url=" + util.getURLWithContextPath(request) + "/confirmation"
-                + "&transaction_type=authorization"
+                + "&transaction_type="+util.getTransactionType()
                 + "&merchant_id=1"
                 + "&req_reference_number=" + referenceNo
                 + "&amount=" + total
